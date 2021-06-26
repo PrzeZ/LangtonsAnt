@@ -48,7 +48,7 @@ public:
 		}
 	}
 
-	void welcome() //prints welcome screen
+	void printWelcomeMessage()
 	{
 		setConsoleColour(DEFAULT_COLOR);
 		std::cout << "Langton's ant (console version)" << std::endl;
@@ -56,7 +56,7 @@ public:
 		std::cout << "-------------------------------" << std::endl;
 	}
 
-	void write() //writes the initial board
+	void writeBoard() 
 	{
 		setConsoleColour(DEFAULT_COLOR);
 		system("cls");
@@ -93,7 +93,7 @@ public:
 		}
 	}
 
-	void setDelay() //changes delay between ant moves
+	void setDelay()
 	{
 		int x = 0;
 
@@ -103,7 +103,7 @@ public:
 		delay = x;
 	}
 
-	void step() //one ant step
+	void run()
 	{
 		Sleep(delay);
 
@@ -241,7 +241,7 @@ public:
 		}
 	}
 
-	void setRules() //sets rules
+	void setRules()
 	{
 		int input = 0;
 
@@ -268,7 +268,7 @@ public:
 	}
 
 private:
-	void setCursorPosition(int x, int y) //allows setting cursor position in console
+	void setCursorPosition(int x, int y)
 	{
 		static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 		std::cout.flush();
@@ -276,7 +276,7 @@ private:
 		SetConsoleCursorPosition(hOut, coord);
 	}
 
-	void const setConsoleColour(unsigned short colour) //changes text colour
+	void const setConsoleColour(unsigned short colour)
 	{
 		static HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 		std::cout.flush();

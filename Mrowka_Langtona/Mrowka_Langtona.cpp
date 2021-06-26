@@ -3,7 +3,7 @@
 
 #include "Board.h"
 
-std::string get_input() //users input
+std::string get_input()
 {
    std::string input = "";
 
@@ -20,7 +20,7 @@ int main()
     std::string input = "";
 
     Board* board = new Board();
-    board->welcome();
+    board->printWelcomeMessage();
 
     do
     {
@@ -28,10 +28,10 @@ int main()
         if (input == "start")
         {
             board->setDelay();
-            board->write();
+            board->writeBoard();
             while (i<50000)
             {
-                board->step();
+                board->run();
                 i++;
             }
         }
